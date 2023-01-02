@@ -32,8 +32,9 @@ namespace LogicDasar
 
                     angka += 2;
                 }
-                Console.WriteLine("\n");
+                Console.WriteLine("\n\n");
             }
+            Console.WriteLine("\n");
         }
     }
 }

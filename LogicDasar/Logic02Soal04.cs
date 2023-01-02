@@ -32,8 +32,9 @@ namespace LogicDasar
                         Console.Write("\t");
                     }
                 }
-                Console.WriteLine("\n");
+                Console.WriteLine("\n\n");
             }
+            Console.WriteLine("\n");
         }
     }
 }
