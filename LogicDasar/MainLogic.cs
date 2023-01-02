@@ -8,7 +8,8 @@ public class MainLogic
         string? input = Console.ReadLine();
         int n = input == null ? 0 : int.Parse(input);
 
-        Console.WriteLine();
+        Console.WriteLine("\n");
+        Console.WriteLine("Logic02" + "\n\n");
         Logic02Soal01.CetakData(n);
         Logic02Soal02.CetakData(n);
         Logic02Soal03.CetakData(n);

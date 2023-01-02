@@ -14,7 +14,7 @@ namespace LogicDasar
 
         public static void CetakData(int n)
         {
-            Console.WriteLine("Logic02Soal09" + "\n");
+            Console.WriteLine("Soal09" + "\n");
             int[,] deret = new int[n, n];
             int kolom = 0;
 
