@@ -12,5 +12,9 @@ public class MainLogic
         Logic02Soal01.CetakData(n);
         Logic02Soal02.CetakData(n);
         Logic02Soal03.CetakData(n);
+        Logic02Soal04.CetakData(n);
+        Logic02Soal05.CetakData(n);
+        Logic02Soal06.CetakData(n);
+        Logic02Soal07.CetakData(n);
     }
 }
