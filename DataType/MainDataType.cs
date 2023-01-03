@@ -3,12 +3,96 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataTypes.CustomType;
+using DataTypes.OOP;
 
 namespace DataTypes
 {
+    public struct Coords
+    {
+        public int x, y;
+        public Coords(int p1, int p2)
+        {
+            x = p1;
+            y = p2;
+        }
+
+        public override string ToString()
+        {
+            return "Coord (" + x + "," + y + ")";
+        }
+    }
+
     public class MainDataType
     {
         public static void Main()
+        {
+            BankAccountSample();
+        }
+
+        #region Sample BankAccount
+        public static void BankAccountSample()
+        {
+            var account = new BankAccount("Aziz", 100000000);
+            Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance} initial balance.");
+        }
+        #endregion
+
+        #region Sample class
+        public static void SampleClass()
+        {
+            SampleClass sampleClass;
+            //Console.WriteLine("Sample class value: {0}", sampleClass.ToString());
+
+            sampleClass = new SampleClass();
+            Console.WriteLine("After call contructor");
+            Console.WriteLine("Sample class value: {0}", sampleClass.ToString());
+
+            sampleClass = new SampleClass(3, 6);
+            Console.WriteLine("After call contructor with params");
+            Console.WriteLine("Sample class value: {0}", sampleClass.ToString());
+        }
+        #endregion
+
+        #region Sample Enum
+        public static void SampleEnum()
+        {
+            Type weekDays = typeof(EnumDays);
+            foreach (var item in Enum.GetNames(weekDays))
+            {
+                Console.WriteLine("Days: {0}", item);
+            }
+
+            Type fieldModel = typeof(EnumFileMode);
+            foreach (var item in Enum.GetNames(fieldModel))
+            {
+                Console.WriteLine("FieldMode : {0}", item);
+            }
+
+            Colors myColors = Colors.Red | Colors.Blue | Colors.Yellow;
+            Console.WriteLine();
+            Console.WriteLine("myColors holds a combination of colors. Namely: {0}", myColors);
+            Console.WriteLine("Color Red: {0}, GetName: {1}", Colors.Red, Enum.GetName(Colors.Red));
+
+            Console.WriteLine("Status Approved: {0}, Names: {1}", ApprovalStep.Approved, Enum.GetName(ApprovalStep.Approved));
+
+        }
+
+        #endregion
+
+        #region Sample Coord
+        public static void SampleCoord()
+        {
+            Coords point1 = new Coords(2, 5);
+            Console.WriteLine("Point 1: " + point1);
+
+            Coords point2 = new Coords(5, 5);
+            Console.WriteLine("Point 2: " + point2);
+        }
+        #endregion
+
+        #region Sample Data Type
+        public static void SampleDataType()
         {
             // Declaration with initializers (four examples):
             char firstLetter = 'C';
@@ -50,8 +134,7 @@ namespace DataTypes
             {
                 Console.WriteLine("item value: " + item);
             }
-
         }
+        #endregion
     }
 }
-
