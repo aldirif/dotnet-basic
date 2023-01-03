@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Statement", "Statement\Stat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicDasar", "LogicDasar\LogicDasar.csproj", "{D2436F3C-AF1A-48AD-859A-D6D6D89FEC25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypes", "DataType\DataTypes.csproj", "{F3866078-EED3-48A5-8ED9-E9EE4FB01BDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTypes", "DataType\DataTypes.csproj", "{F3866078-EED3-48A5-8ED9-E9EE4FB01BDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

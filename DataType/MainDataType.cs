@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DataTypes.CustomType;
 using DataTypes.OOP;
-
 namespace DataTypes
 {
     public struct Coords
@@ -27,22 +26,115 @@ namespace DataTypes
     {
         public static void Main()
         {
-            BankAccountSample();
+            //SampleEnum();
+            //SampleClass();
+            //BankAccountSample();
+            //GiftCardAccountSample();
+            InterestEarningAccountsample();
+            //LineOfCreditAccountSample();
         }
+
+        #region Sample LineofCredit
+        public static void LineOfCreditAccountSample()
+        {
+            var lineOfCredit = new LineOfCreditAccount("line of credit", 0);
+            // How much is too much to borrow?
+            lineOfCredit.MakeWithdrawal(1000m, DateTime.Now, "Take out monthly advance");
+            lineOfCredit.MakeDeposit(50m, DateTime.Now, "Pay back small amount");
+            lineOfCredit.MakeWithdrawal(5000m, DateTime.Now, "Emergency funds for repairs");
+            lineOfCredit.MakeDeposit(150m, DateTime.Now, "Partial restoration on repairs");
+            lineOfCredit.PerformMonthEndTransactions();
+            Console.WriteLine(lineOfCredit.GetAccountHistory());
+        }
+        #endregion
+
+        #region Sample GiftCard
+        public static void GiftCardAccountSample()
+        {
+            var giftCard = new GiftCardAccount("gift card", 100, 50);
+            giftCard.MakeWithdrawal(20, DateTime.Now, "get expensive coffee");
+            giftCard.MakeWithdrawal(50, DateTime.Now, "buy groceries");
+            giftCard.PerformMonthEndTransactions();
+            // can make additional deposits:
+            giftCard.MakeDeposit(27.50m, DateTime.Now, "add some additional spending money");
+            Console.WriteLine(giftCard.GetAccountHistory());
+        }
+        #endregion
+
+        #region Sample Interest Earning Account Sample
+        public static void InterestEarningAccountsample()
+        {
+            var savings = new InterestEarningAccount("savings account", 10000);
+            savings.MakeDeposit(750, DateTime.Now, "save some money");
+            savings.MakeDeposit(1250, DateTime.Now, "Add more savings");
+            savings.MakeWithdrawal(250, DateTime.Now, "Needed to pay monthly bills");
+            savings.PerformMonthEndTransactions();
+            Console.WriteLine(savings.GetAccountHistory());
+        }
+        #endregion
+
+
+        #region Sample Trancation BankAccount
+        public static void TransactionBankAccount()
+        {
+            var account = new BankAccount("Aziz", 1000);
+            Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance} initial balance.");
+            // Test for a negative balance.
+            try
+            {
+                account.MakeWithdrawal(750, DateTime.Now, "Attempt to overdraw");
+            }
+            catch (InvalidOperationException e)
+            {
+                Console.WriteLine("Exception caught trying to overdraw");
+                Console.WriteLine(e.ToString());
+            }
+
+            try
+            {
+                account.MakeWithdrawal(750, DateTime.Now, "Attempt to overdraw");
+            }
+            catch (InvalidOperationException e)
+            {
+                Console.WriteLine("Exception caught trying to overdraw");
+                Console.WriteLine(e.ToString());
+            }
+
+            // Test that the initial balances must be positive.
+            BankAccount invalidAccount;
+            try
+            {
+                invalidAccount = new BankAccount("invalid", -55);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                Console.WriteLine("Exception caught creating account with negative balance");
+                Console.WriteLine(e.ToString());
+                return;
+            }
+        }
+        #endregion
 
         #region Sample BankAccount
         public static void BankAccountSample()
         {
-            var account = new BankAccount("Aziz", 100000000);
+            var account = new BankAccount("Plato", 100000000);
             Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance} initial balance.");
+
+            var account2 = new BankAccount("Aristoteles", 1000000000);
+            Console.WriteLine($"Account {account2.Number} was created for {account2.Owner} with {account2.Balance} initial balance.");
+
+            var account3 = new BankAccount("Socrates", 10000000000);
+            Console.WriteLine($"Account {account3.Number} was created for {account3.Owner} with {account3.Balance} initial balance.");
         }
         #endregion
+
 
         #region Sample class
         public static void SampleClass()
         {
             SampleClass sampleClass;
-            //Console.WriteLine("Sample class value: {0}", sampleClass.ToString());
+            //Console.WriteLine("Sample class value: {0}", sampleClass.ToString()); akan error
 
             sampleClass = new SampleClass();
             Console.WriteLine("After call contructor");
@@ -53,6 +145,7 @@ namespace DataTypes
             Console.WriteLine("Sample class value: {0}", sampleClass.ToString());
         }
         #endregion
+
 
         #region Sample Enum
         public static void SampleEnum()
@@ -90,7 +183,6 @@ namespace DataTypes
             Console.WriteLine("Point 2: " + point2);
         }
         #endregion
-
         #region Sample Data Type
         public static void SampleDataType()
         {
