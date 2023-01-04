@@ -1,10 +1,14 @@
-﻿using System;
+﻿using DataTypes.Abstract;
+using DataTypes.CustomType;
+using DataTypes.Inheritance;
+using DataTypes.OOP;
+using DataTypes.OOP.Inheritance;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataTypes.CustomType;
-using DataTypes.OOP;
+
 namespace DataTypes
 {
     public struct Coords
@@ -30,14 +34,70 @@ namespace DataTypes
             //SampleClass();
             //BankAccountSample();
             //GiftCardAccountSample();
-            InterestEarningAccountsample();
+            //InterestEarningAccountsample();
             //LineOfCreditAccountSample();
+            //AutomobileExample();
+            //BookPublication();
+            ShapeExample();
         }
+
+        #region Abstract Example Shape
+        public static void ShapeExample()
+        {
+            Shape[] shapes = { new Rectangle(10, 12), new Square(5),
+                    new Circle(3) };
+            foreach (Shape shape in shapes)
+            {
+                Console.WriteLine($"{shape}: area, {Shape.GetArea(shape)}; " +
+                                  $"perimeter, {Shape.GetPerimeter(shape)}");
+                if (shape is Rectangle rect)
+                {
+                    Console.WriteLine($"   Is Square: {rect.IsSquare()}, Diagonal: {rect.Diagonal}");
+                    continue;
+                }
+                if (shape is Square sq)
+                {
+                    Console.WriteLine($"   Diagonal: {sq.Diagonal}");
+                    continue;
+                }
+            }
+        }
+        #endregion
+
+        #region Inheritance Publication book
+        public static void BookPublication()
+        {
+            var book = new Book("The Tempest", "0971655819", "Shakespeare, William",
+                                "Public Domain Press");
+            ShowPublicationInfo(book);
+            book.Publish(new DateTime(2016, 8, 18));
+            ShowPublicationInfo(book);
+
+            var book2 = new Book("The Tempest", "Classic Works Press", "Shakespeare, William");
+            Console.Write($"{book.Title} and {book2.Title} are the same publication: " +
+                  $"{((Publication)book).Equals(book2)}");
+        }
+
+        public static void ShowPublicationInfo(Publication pub)
+        {
+            string pubDate = pub.GetPublicationDate();
+            Console.WriteLine($"{pub.Title}, " +
+                      $"{(pubDate == "NYP" ? "Not Yet Published" : "published on " + pubDate):d} by {pub.Publisher}");
+        }
+        #endregion
+
+        #region Inheritance Example Automobile
+        public static void AutomobileExample()
+        {
+            var packard = new Automobile("Packard", "Custom Eight", 1948);
+            Console.WriteLine(packard);
+        }
+        #endregion
 
         #region Sample LineofCredit
         public static void LineOfCreditAccountSample()
         {
-            var lineOfCredit = new LineOfCreditAccount("line of credit", 0);
+            var lineOfCredit = new LineOfCreditAccount("line of credit", 0, 10000);
             // How much is too much to borrow?
             lineOfCredit.MakeWithdrawal(1000m, DateTime.Now, "Take out monthly advance");
             lineOfCredit.MakeDeposit(50m, DateTime.Now, "Pay back small amount");
@@ -64,10 +124,10 @@ namespace DataTypes
         #region Sample Interest Earning Account Sample
         public static void InterestEarningAccountsample()
         {
-            var savings = new InterestEarningAccount("savings account", 10000);
-            savings.MakeDeposit(750, DateTime.Now, "save some money");
-            savings.MakeDeposit(1250, DateTime.Now, "Add more savings");
-            savings.MakeWithdrawal(250, DateTime.Now, "Needed to pay monthly bills");
+            var savings = new InterestEarningAccount("savings account", 100000);
+            savings.MakeDeposit(7550, DateTime.Now, "save some money");
+            savings.MakeDeposit(11250, DateTime.Now, "Add more savings");
+            savings.MakeWithdrawal(2150, DateTime.Now, "Needed to pay monthly bills");
             savings.PerformMonthEndTransactions();
             Console.WriteLine(savings.GetAccountHistory());
         }
