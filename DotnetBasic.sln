@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicDasar", "LogicDasar\Lo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTypes", "DataType\DataTypes.csproj", "{F3866078-EED3-48A5-8ED9-E9EE4FB01BDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertType", "ConvertType\ConvertType.csproj", "{675A134D-2CCE-4C03-9BA7-0E4EFE5FA964}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F3866078-EED3-48A5-8ED9-E9EE4FB01BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3866078-EED3-48A5-8ED9-E9EE4FB01BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3866078-EED3-48A5-8ED9-E9EE4FB01BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675A134D-2CCE-4C03-9BA7-0E4EFE5FA964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675A134D-2CCE-4C03-9BA7-0E4EFE5FA964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675A134D-2CCE-4C03-9BA7-0E4EFE5FA964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675A134D-2CCE-4C03-9BA7-0E4EFE5FA964}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
