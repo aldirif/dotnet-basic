@@ -1,8 +1,8 @@
-﻿using DataTypes.Abstract;
-using DataTypes.CustomType;
-using DataTypes.Inheritance;
+﻿using DataTypes.CustomType;
+using DataTypes.InheritanceType;
+using DataTypes.ObjectType;
 using DataTypes.OOP;
-using DataTypes.OOP.Inheritance;
+using DataTypes.PolyType;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,37 +30,64 @@ namespace DataTypes
     {
         public static void Main()
         {
-            //SampleEnum();
-            //SampleClass();
-            //BankAccountSample();
-            //GiftCardAccountSample();
-            //InterestEarningAccountsample();
-            //LineOfCreditAccountSample();
-            //AutomobileExample();
-            //BookPublication();
-            ShapeExample();
+            SampleClassImplement.InterfaceImplement();
         }
 
-        #region Abstract Example Shape
-        public static void ShapeExample()
+        #region Sample Interface
+
+        #endregion
+
+        #region Polimorphism
+
+        #endregion
+
+        #region Sample Inheritance
+        public static void SampleInheritance()
         {
-            Shape[] shapes = { new Rectangle(10, 12), new Square(5),
-                    new Circle(3) };
-            foreach (Shape shape in shapes)
-            {
-                Console.WriteLine($"{shape}: area, {Shape.GetArea(shape)}; " +
-                                  $"perimeter, {Shape.GetPerimeter(shape)}");
-                if (shape is Rectangle rect)
-                {
-                    Console.WriteLine($"   Is Square: {rect.IsSquare()}, Diagonal: {rect.Diagonal}");
-                    continue;
-                }
-                if (shape is Square sq)
-                {
-                    Console.WriteLine($"   Diagonal: {sq.Diagonal}");
-                    continue;
-                }
-            }
+            // Create an instance of WorkItem by using the constructor in the
+            // base class that takes three arguments.
+            WorkItem item = new WorkItem("Fix Bugs",
+                                        "Fix all bugs in my code branch",
+                                        new TimeSpan(3, 4, 0, 0));
+
+            // Create an instance of ChangeRequest by using the constructor in
+            // the derived class that takes four arguments.
+            ChangeRequest change = new ChangeRequest("Change Base Class Design",
+                                                    "Add members to the class",
+                                                    new TimeSpan(4, 0, 0),
+                                                    1);
+
+            // Use the ToString method defined in WorkItem.
+            Console.WriteLine(item.ToString());
+
+            // Use the inherited Update method to change the title of the
+            // ChangeRequest object.
+            change.Update("Change the Design of the Base Class",
+                new TimeSpan(4, 0, 0));
+
+            // ChangeRequest inherits WorkItem's override of ToString.
+            Console.WriteLine(change.ToString());
+        }
+        #endregion
+
+        #region Sample Object
+        public static void SampleObject()
+        {
+            Person person1 = new Person("Kezia", 26);
+            Console.WriteLine("person1 Name = {0} Age = {1}", person1.Name, person1.Age);
+
+            // Declare new person, assign person1 to it.
+            Person person2 = person1;
+
+            // Change the name of person2, and person1 also changes.
+            person2.Name = "Molly";
+            person2.Age = 16;
+
+            Console.WriteLine("person2 Name = {0} Age = {1}", person2.Name, person2.Age);
+            Console.WriteLine("person1 Name = {0} Age = {1}", person1.Name, person1.Age);
+
+            Person person3 = new Person("Roni", 30);
+            Console.WriteLine("person3 Name = {0} Age = {1}", person3.Name, person3.Age);
         }
         #endregion
 
@@ -133,7 +160,6 @@ namespace DataTypes
         }
         #endregion
 
-
         #region Sample Trancation BankAccount
         public static void TransactionBankAccount()
         {
@@ -178,23 +204,22 @@ namespace DataTypes
         #region Sample BankAccount
         public static void BankAccountSample()
         {
-            var account = new BankAccount("Plato", 100000000);
+            var account = new BankAccount("Aziz", 100000000);
             Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance} initial balance.");
 
-            var account2 = new BankAccount("Aristoteles", 1000000000);
+            var account2 = new BankAccount("Richi", 1000000000);
             Console.WriteLine($"Account {account2.Number} was created for {account2.Owner} with {account2.Balance} initial balance.");
 
-            var account3 = new BankAccount("Socrates", 10000000000);
+            var account3 = new BankAccount("Manulang", 10000000000);
             Console.WriteLine($"Account {account3.Number} was created for {account3.Owner} with {account3.Balance} initial balance.");
         }
         #endregion
-
 
         #region Sample class
         public static void SampleClass()
         {
             SampleClass sampleClass;
-            //Console.WriteLine("Sample class value: {0}", sampleClass.ToString()); akan error
+            //Console.WriteLine("Sample class value: {0}", sampleClass.ToString());
 
             sampleClass = new SampleClass();
             Console.WriteLine("After call contructor");
@@ -205,7 +230,6 @@ namespace DataTypes
             Console.WriteLine("Sample class value: {0}", sampleClass.ToString());
         }
         #endregion
-
 
         #region Sample Enum
         public static void SampleEnum()
@@ -243,6 +267,7 @@ namespace DataTypes
             Console.WriteLine("Point 2: " + point2);
         }
         #endregion
+
         #region Sample Data Type
         public static void SampleDataType()
         {

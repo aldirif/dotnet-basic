@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataTypes.OOP.Inheritance
+namespace DataTypes.InheritanceType
 {
     public enum PublicationType { Misc, Book, Magazine, Article };
 

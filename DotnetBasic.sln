@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicDasar", "LogicDasar\Lo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTypes", "DataType\DataTypes.csproj", "{F3866078-EED3-48A5-8ED9-E9EE4FB01BDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertType", "ConvertType\ConvertType.csproj", "{675A134D-2CCE-4C03-9BA7-0E4EFE5FA964}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertType", "ConvertType\ConvertType.csproj", "{675A134D-2CCE-4C03-9BA7-0E4EFE5FA964}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

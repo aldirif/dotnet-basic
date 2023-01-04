@@ -1,11 +1,10 @@
-﻿using DataTypes.OOP.Inheritance;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataTypes.Inheritance
+namespace DataTypes.InheritanceType
 {
     public sealed class Book : Publication
     {
