@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTypes", "DataType\DataT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertType", "ConvertType\ConvertType.csproj", "{675A134D-2CCE-4C03-9BA7-0E4EFE5FA964}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqTutorial", "LinQTutorial\LinqTutorial.csproj", "{C51E9418-378B-48B6-866E-9F43F4EAF91A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample101Linq", "Sample101Linq\Sample101Linq.csproj", "{FFD28F25-6A9C-455B-9F71-0992D68CD349}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{675A134D-2CCE-4C03-9BA7-0E4EFE5FA964}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{675A134D-2CCE-4C03-9BA7-0E4EFE5FA964}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{675A134D-2CCE-4C03-9BA7-0E4EFE5FA964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C51E9418-378B-48B6-866E-9F43F4EAF91A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C51E9418-378B-48B6-866E-9F43F4EAF91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C51E9418-378B-48B6-866E-9F43F4EAF91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C51E9418-378B-48B6-866E-9F43F4EAF91A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFD28F25-6A9C-455B-9F71-0992D68CD349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD28F25-6A9C-455B-9F71-0992D68CD349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD28F25-6A9C-455B-9F71-0992D68CD349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD28F25-6A9C-455B-9F71-0992D68CD349}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
